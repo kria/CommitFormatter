@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Adrup.CommitFormatter.SettingsSectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:tfcrd="clr-namespace:Microsoft.TeamFoundation.Controls.WPF;assembly=Microsoft.TeamFoundation.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary x:Uid="ucResourceDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <tfcrd:TFCachedResourceDictionary Source="pack://application:,,,/Microsoft.TeamFoundation.Controls;component/WPF/SharedResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <tfcrd:LabeledTextBox Name="txtSubjectWidth" Row="0" Margin="0,0,0,6" Header="Subject Width" HintText="Enter a subject width" AcceptsReturn="False" NameAndAutomationId="Subject width" Text=""/>
+
+        <tfcrd:LabeledTextBox Name="txtBodyWidth" Row="1" Margin="0,0,0,6" Header="Body Width" HintText="Enter a body width" AcceptsReturn="False" NameAndAutomationId="Body width" Text=""/>
+
+        <tfcrd:LabeledTextBox Name="txtFontSize" Row="2" Margin="0,0,0,6" Header="Font Size" HintText="Enter a font size" AcceptsReturn="False" NameAndAutomationId="Font size" Text=""/>
+
+        <CheckBox Name="chkUseMonospacedFont"  Grid.Row="3" Margin="0,0,0,6" Background="{StaticResource ToolWindowBackgroundBrushKey}">Use Monospaced Font</CheckBox>
+
+    </Grid>
+</UserControl>
