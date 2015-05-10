@@ -38,6 +38,7 @@ namespace Adrup.CommitFormatter
         private int _bodyWidth;
         private int _fontSize;
         private bool _useMonospacedFont;
+        private bool _blankSecondLine;
 
         private TextBox _commitMessageBox = null;
         private LabeledTextBox _labeledTextBox = null;
@@ -58,6 +59,7 @@ namespace Adrup.CommitFormatter
             _bodyWidth = settings.BodyWidth;
             _fontSize = settings.FontSize;
             _useMonospacedFont = settings.UseMonospacedFont;
+            _blankSecondLine = settings.BlankSecondLine;
         }
 
         public override void Loaded(object sender, SectionLoadedEventArgs e)
@@ -96,7 +98,7 @@ namespace Adrup.CommitFormatter
         {
             if (InitializeAdorner())
             {
-                int charsLeft = TextHelper.CountLineCharsLeft(_commitMessageBox.Text, _commitMessageBox.CaretIndex, _subjectWidth, _bodyWidth, true);
+                int charsLeft = TextHelper.CountLineCharsLeft(_commitMessageBox.Text, _commitMessageBox.CaretIndex, _subjectWidth, _bodyWidth, _blankSecondLine);
                 _adorner.DataContext = charsLeft;
                 _adorner.InvalidateVisual();
             }
@@ -109,7 +111,7 @@ namespace Adrup.CommitFormatter
             int caretIndexDelta = 0;
             int caretIndex = _commitMessageBox.CaretIndex;
             
-            string newtext = TextHelper.Wrap(text, caretIndex, _subjectWidth, _bodyWidth, true, out caretIndexDelta);
+            string newtext = TextHelper.Wrap(text, caretIndex, _subjectWidth, _bodyWidth, _blankSecondLine, out caretIndexDelta);
             if (newtext != _commitMessageBox.Text)
             {
                 _isCurrentlyChangingText = true;

@@ -47,6 +47,7 @@ namespace Adrup.CommitFormatter
             view.txtBodyWidth.Text = _settings.BodyWidth.ToString();
             view.txtFontSize.Text = _settings.FontSize.ToString();
             view.chkUseMonospacedFont.IsChecked = _settings.UseMonospacedFont;
+            view.chkBlankSecondLine.IsChecked = _settings.BlankSecondLine;
         }
 
         public override void SaveContext(object sender, SectionSaveContextEventArgs e)
@@ -58,6 +59,7 @@ namespace Adrup.CommitFormatter
             if (int.TryParse(view.txtBodyWidth.Text, out value)) _settings.BodyWidth = value;
             if (int.TryParse(view.txtFontSize.Text, out value)) _settings.FontSize = value;
             _settings.UseMonospacedFont = view.chkUseMonospacedFont.IsChecked.Value;
+            _settings.BlankSecondLine = view.chkBlankSecondLine.IsChecked.Value;
         }
 
     }

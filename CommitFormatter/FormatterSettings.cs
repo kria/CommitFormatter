@@ -28,6 +28,7 @@ namespace Adrup.CommitFormatter
         public const string BodyWidthKey = "BodyWidth";
         public const string FontSizeKey = "FontSize";
         public const string UseMonospacedFontKey = "UseMonospacedFont";
+        public const string BlankSecondLineKey = "BlankSecondLine";
 
         private WritableSettingsStore _userSettingsStore;
 
@@ -42,6 +43,7 @@ namespace Adrup.CommitFormatter
                 BodyWidth = 72;
                 FontSize = 11;
                 UseMonospacedFont = true;
+                BlankSecondLine = true;
             }
         }
 
@@ -65,8 +67,14 @@ namespace Adrup.CommitFormatter
 
         public bool UseMonospacedFont
         {
-            get { return _userSettingsStore.GetBoolean(CollectionPath, UseMonospacedFontKey); }
+            get { return _userSettingsStore.GetBoolean(CollectionPath, UseMonospacedFontKey, true); }
             set { _userSettingsStore.SetBoolean(CollectionPath, UseMonospacedFontKey, value); }
+        }
+
+        public bool BlankSecondLine
+        {
+            get { return _userSettingsStore.GetBoolean(CollectionPath, BlankSecondLineKey, true); }
+            set { _userSettingsStore.SetBoolean(CollectionPath, BlankSecondLineKey, value); }
         }
     }
 }
