@@ -78,22 +78,28 @@ namespace Adrup.CommitFormatter
             _commitMessageBox.TextWrapping = TextWrapping.NoWrap;
         }
 
-        private void InitializeAdorner()
+        private bool InitializeAdorner()
         {
             if (_adorner == null)
             {
-                _adorner = new CharsLeftAdorner(_labeledTextBox);
                 var myAdornerLayer = AdornerLayer.GetAdornerLayer(_labeledTextBox);
+                if (myAdornerLayer == null) return false;
+
+                _adorner = new CharsLeftAdorner(_labeledTextBox);
                 myAdornerLayer.Add(_adorner);
             }
+
+            return true;
         }
+
         void OnSelectionChanged(object sender, RoutedEventArgs e)
         {
-
-            InitializeAdorner();
-            int charsLeft = TextHelper.CountLineCharsLeft(_commitMessageBox.Text, _commitMessageBox.CaretIndex, _subjectWidth, _bodyWidth, true);
-            _adorner.DataContext = charsLeft;
-            _adorner.InvalidateVisual();
+            if (InitializeAdorner())
+            {
+                int charsLeft = TextHelper.CountLineCharsLeft(_commitMessageBox.Text, _commitMessageBox.CaretIndex, _subjectWidth, _bodyWidth, true);
+                _adorner.DataContext = charsLeft;
+                _adorner.InvalidateVisual();
+            }
         }
 
         private void OnCommitMessageChanged(object sender, TextChangedEventArgs e)
