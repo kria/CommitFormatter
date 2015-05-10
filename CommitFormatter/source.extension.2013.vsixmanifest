@@ -8,7 +8,7 @@
     <License>LICENSE.txt</License>
     <ReleaseNotes>https://github.com/kria/CommitFormatter/releases</ReleaseNotes>
     <Icon>Resources\git-icon.png</Icon>
-    <PreviewImage>Resources\preview.png</PreviewImage>
+    <PreviewImage>Resources\settings.png</PreviewImage>
     <Tags>git, commit, message, wrap, wrapping, line wrap, word wrap, format, formatting, team explorer </Tags>
   </Metadata>
   <Installation InstalledByMsi="false">
