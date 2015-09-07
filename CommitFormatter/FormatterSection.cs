@@ -14,6 +14,7 @@
 using Microsoft.TeamExplorerSample;
 using Microsoft.TeamFoundation.Controls;
 using Microsoft.TeamFoundation.Controls.WPF;
+using Microsoft.TeamFoundation.Controls.WPF.TeamExplorer.Framework;
 using Microsoft.TeamFoundation.Git.Controls.Extensibility;
 using System;
 using System.Collections.Generic;
@@ -64,12 +65,46 @@ namespace Adrup.CommitFormatter
 
         public override void Loaded(object sender, SectionLoadedEventArgs e)
         {
-            var service = this.GetService<ITeamExplorer>();
-            var page = service.CurrentPage;
-            // typecheck..
-            UserControl uc = page.PageContent as UserControl;
-            _labeledTextBox = uc.FindName("commentTextBox") as LabeledTextBox;
+            var service = GetService<TeamExplorerViewModel>();
+            if (service == null)
+            {
+                ShowNotification("Commit Formatter: Can't get TeamExplorerViewModel", NotificationType.Error);
+                return;
+            }
+
+            var changesGuid = Guid.Parse(TeamExplorerPageIds.GitChanges);
+
+            var pages = new List<ITeamExplorerPage>();
+            pages.Add(service.CurrentPage);
+            pages.AddRange(service.UndockedPages);
+
+            var changesPage = pages.FirstOrDefault(p => p.GetId() == changesGuid); 
+            if (changesPage == null)
+            {
+                ShowNotification("Commit Formatter: Can't get the Changes page", NotificationType.Error);
+                return;
+            }
+
+            var view = changesPage.PageContent as UserControl;
+            if (view == null)
+            {
+                ShowNotification("Commit Formatter: Can't get the Changes view", NotificationType.Error);
+                return;
+            }
+
+            _labeledTextBox = view.FindName("commentTextBox") as LabeledTextBox;
+            if (_labeledTextBox == null)
+            {
+                ShowNotification("Commit Formatter: Can't find commentTextBox", NotificationType.Error);
+                return;
+            }
+            
             _commitMessageBox = _labeledTextBox.FindName("textBox") as TextBox;
+            if (_commitMessageBox == null)
+            {
+                ShowNotification("Commit Formatter: Can't find textBox", NotificationType.Error);
+                return;
+            }
 
             _commitMessageBox.TextChanged += OnCommitMessageChanged;
             _commitMessageBox.SelectionChanged += OnSelectionChanged;
@@ -126,8 +161,11 @@ namespace Adrup.CommitFormatter
         {
             base.Dispose();
 
-            _commitMessageBox.TextChanged -= OnCommitMessageChanged;
-            _commitMessageBox.SelectionChanged -= OnSelectionChanged;
+            if (_commitMessageBox != null)
+            {
+                _commitMessageBox.TextChanged -= OnCommitMessageChanged;
+                _commitMessageBox.SelectionChanged -= OnSelectionChanged;
+            }
         }
 
     }

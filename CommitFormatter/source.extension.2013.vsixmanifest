@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="b633b569-85c0-4bf2-b54e-96022d4b76c5" Version="1.1.0" Language="en-US" Publisher="Kristian Adrup" />
+    <Identity Id="b633b569-85c0-4bf2-b54e-96022d4b76c5" Version="1.2.0" Language="en-US" Publisher="Kristian Adrup" />
     <DisplayName>Commit Formatter for Visual Studio 2013</DisplayName>
     <Description>Adds automatic word wrap to the Git commit message textbox.</Description>
     <MoreInfo>https://github.com/kria/CommitFormatter</MoreInfo>
