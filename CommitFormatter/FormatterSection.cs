@@ -75,7 +75,8 @@ namespace Adrup.CommitFormatter
             var changesGuid = Guid.Parse(TeamExplorerPageIds.GitChanges);
 
             var pages = new List<ITeamExplorerPage>();
-            pages.Add(service.CurrentPage);
+            if (service.CurrentPage != null)
+                pages.Add(service.CurrentPage);
             pages.AddRange(service.UndockedPages);
 
             var changesPage = pages.FirstOrDefault(p => p.GetId() == changesGuid); 
