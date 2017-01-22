@@ -19,9 +19,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adrup.CommitFormatter
+namespace Adrup.CommitFormatter.Core
 {
-    class FormatterSettings
+    public class FormatterSettings
     {
         public const string CollectionPath = "Adrup.CommitFormatter";
         public const string SubjectWidthKey = "SubjectWidth";

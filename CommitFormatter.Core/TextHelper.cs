@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adrup.CommitFormatter
+namespace Adrup.CommitFormatter.Core
 {
     public static class TextHelper
     {

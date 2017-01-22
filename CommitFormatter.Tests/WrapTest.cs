@@ -14,7 +14,7 @@
 using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Adrup.CommitFormatter;
+using Adrup.CommitFormatter.Core;
 
 namespace Adrup.CommitFormatter.Tests
 {

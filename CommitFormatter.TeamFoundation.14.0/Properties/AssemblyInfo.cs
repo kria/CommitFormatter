@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CommitFormatter.Tests")]
+[assembly: AssemblyTitle("CommitFormatter.TeamFoundation.14.0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CommitFormatter.Tests")]
+[assembly: AssemblyProduct("CommitFormatter.TeamFoundation.14.0")]
 [assembly: AssemblyCopyright("Copyright © 2015-2017 Kristian Adrup")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("54f26c23-de38-478a-a9f4-a68affd101c2")]
+[assembly: Guid("4b8c9b91-e3f3-4ba6-ae7b-2aee47b8778b")]
 
 // Version information for an assembly consists of the following four values:
 //

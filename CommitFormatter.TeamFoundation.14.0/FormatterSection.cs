@@ -11,11 +11,11 @@
  * your option) any later version. See included file COPYING for details.
  */
 
+using Adrup.CommitFormatter.Core;
 using Microsoft.TeamExplorerSample;
 using Microsoft.TeamFoundation.Controls;
 using Microsoft.TeamFoundation.Controls.WPF;
 using Microsoft.TeamFoundation.Controls.WPF.TeamExplorer.Framework;
-using Microsoft.TeamFoundation.Git.Controls.Extensibility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +28,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace Adrup.CommitFormatter
+namespace Adrup.CommitFormatter.TeamFoundation
 {
     [TeamExplorerSection(FormatterSection.SectionId, TeamExplorerPageIds.GitChanges, 900)]
     public class FormatterSection : TeamExplorerBaseSection

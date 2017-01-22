@@ -11,18 +11,16 @@
  * your option) any later version. See included file COPYING for details.
  */
 
+using Adrup.CommitFormatter.Core;
 using Microsoft.TeamExplorerSample;
 using Microsoft.TeamFoundation.Controls;
-using Microsoft.VisualStudio.Settings;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.Shell.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adrup.CommitFormatter
+namespace Adrup.CommitFormatter.TeamFoundation
 {
     [TeamExplorerSection(SettingsSection.SectionId, TeamExplorerPageIds.GitSettings, 900)]
     public class SettingsSection : TeamExplorerBaseSection
