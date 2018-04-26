@@ -109,6 +109,7 @@ namespace Adrup.CommitFormatter.TeamFoundation
 
             _commitMessageBox.TextChanged += OnCommitMessageChanged;
             _commitMessageBox.SelectionChanged += OnSelectionChanged;
+            _commitMessageBox.SpellCheck.IsEnabled = true;
 
             if (_useMonospacedFont)
                 _commitMessageBox.FontFamily = new FontFamily("Consolas");
