@@ -29,6 +29,7 @@ namespace Adrup.CommitFormatter.Core
         public const string FontSizeKey = "FontSize";
         public const string UseMonospacedFontKey = "UseMonospacedFont";
         public const string BlankSecondLineKey = "BlankSecondLine";
+        public const string EnableSpellCheckKey = "EnableSpellCheck";
 
         private WritableSettingsStore _userSettingsStore;
 
@@ -75,6 +76,12 @@ namespace Adrup.CommitFormatter.Core
         {
             get { return _userSettingsStore.GetBoolean(CollectionPath, BlankSecondLineKey, true); }
             set { _userSettingsStore.SetBoolean(CollectionPath, BlankSecondLineKey, value); }
+        }
+
+        public bool EnableSpellCheck
+        {
+            get { return _userSettingsStore.GetBoolean(CollectionPath, EnableSpellCheckKey, true); }
+            set { _userSettingsStore.SetBoolean(CollectionPath, EnableSpellCheckKey, value); }
         }
     }
 }

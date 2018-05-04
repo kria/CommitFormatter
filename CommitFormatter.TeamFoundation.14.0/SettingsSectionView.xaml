@@ -20,6 +20,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -34,6 +35,8 @@
         <CheckBox Name="chkBlankSecondLine"  Grid.Row="3" Margin="0,0,0,6" Background="{StaticResource ToolWindowBackgroundBrushKey}">Blank Second Line</CheckBox>
 
         <CheckBox Name="chkUseMonospacedFont"  Grid.Row="4" Margin="0,0,0,6" Background="{StaticResource ToolWindowBackgroundBrushKey}">Use Monospaced Font</CheckBox>
+
+        <CheckBox Name="chkEnableSpellCheck"  Grid.Row="5" Margin="0,0,0,6" Background="{StaticResource ToolWindowBackgroundBrushKey}">Enable Spell Check</CheckBox>
 
     </Grid>
 </UserControl>
