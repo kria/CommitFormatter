@@ -40,6 +40,7 @@ namespace Adrup.CommitFormatter.TeamFoundation
         private int _fontSize;
         private bool _useMonospacedFont;
         private bool _blankSecondLine;
+        private bool _enableSpellCheck;
 
         private TextBox _commitMessageBox = null;
         private LabeledTextBox _labeledTextBox = null;
@@ -61,6 +62,7 @@ namespace Adrup.CommitFormatter.TeamFoundation
             _fontSize = settings.FontSize;
             _useMonospacedFont = settings.UseMonospacedFont;
             _blankSecondLine = settings.BlankSecondLine;
+            _enableSpellCheck = settings.EnableSpellCheck;
         }
 
         public override void Loaded(object sender, SectionLoadedEventArgs e)
@@ -109,6 +111,7 @@ namespace Adrup.CommitFormatter.TeamFoundation
 
             _commitMessageBox.TextChanged += OnCommitMessageChanged;
             _commitMessageBox.SelectionChanged += OnSelectionChanged;
+            _commitMessageBox.SpellCheck.IsEnabled = _enableSpellCheck;
 
             if (_useMonospacedFont)
                 _commitMessageBox.FontFamily = new FontFamily("Consolas");
