@@ -16,6 +16,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
 # Roslyn cache directories
 *.ide/
 
@@ -190,4 +193,3 @@ ModelManifest.xml
 
 # VSIX signing
 sign.bat
-/.vs/
