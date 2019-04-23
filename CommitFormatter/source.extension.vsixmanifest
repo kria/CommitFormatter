@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-    <Metadata>
-        <Identity Id="c189aa3d-0ebc-46fc-b3ee-df073be1c1c5" Version="1.4.0" Language="en-US" Publisher="Kristian Adrup" />
-        <DisplayName>Commit Formatter</DisplayName>
-        <Description xml:space="preserve">Adds automatic word wrap to the Git commit message textbox.</Description>
-        <License>LICENSE.txt</License>
-        <ReleaseNotes>https://github.com/kria/CommitFormatter/releases</ReleaseNotes>
-        <Icon>Resources\git-icon.png</Icon>
-        <PreviewImage>Resources\settings.png</PreviewImage>
-        <Tags>git;commit;message;wrap;wrapping;line wrap;word wrap;format;formatting;team explorer </Tags>
-    </Metadata>
-    <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,16.0)" />
-    </Installation>
-    <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-        <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
-    </Dependencies>
-    <Assets>
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%.TeamFoundation.14.0" Path="|CommitFormatter.TeamFoundation.14.0|" />
-        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%.TeamFoundation.15.0" Path="|CommitFormatter.TeamFoundation.15.0|" />
-        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Core" Path="|CommitFormatter.Core|" AssemblyName="|CommitFormatter.Core;AssemblyName|" />
-    </Assets>
-    <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
-    </Prerequisites>
+  <Metadata>
+    <Identity Id="c189aa3d-0ebc-46fc-b3ee-df073be1c1c5" Version="1.4.0" Language="en-US" Publisher="Kristian Adrup" />
+    <DisplayName>Commit Formatter</DisplayName>
+    <Description xml:space="preserve">Adds automatic word wrap to the Git commit message textbox.</Description>
+    <License>LICENSE.txt</License>
+    <ReleaseNotes>https://github.com/kria/CommitFormatter/releases</ReleaseNotes>
+    <Icon>Resources\git-icon.png</Icon>
+    <PreviewImage>Resources\settings.png</PreviewImage>
+    <Tags>git;commit;message;wrap;wrapping;line wrap;word wrap;format;formatting;team explorer </Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,17.0)" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%.TeamFoundation.14.0" Path="|CommitFormatter.TeamFoundation.14.0|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%.TeamFoundation.15.0" Path="|CommitFormatter.TeamFoundation.15.0|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%.TeamFoundation.16.0" Path="|CommitFormatter.TeamFoundation.16.0|" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Core" Path="|CommitFormatter.Core|" AssemblyName="|CommitFormatter.Core;AssemblyName|" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,17.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
 </PackageManifest>

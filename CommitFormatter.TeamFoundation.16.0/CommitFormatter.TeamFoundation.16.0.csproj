@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE6B9DC5-35DC-46B7-A690-211C061B8027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Adrup.CommitFormatter.TeamFoundation</RootNamespace>
+    <AssemblyName>Adrup.CommitFormatter.TeamFoundation.16.0</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\16.0\Microsoft.TeamFoundation.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\16.0\Microsoft.TeamFoundation.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Controls, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\16.0\Microsoft.TeamFoundation.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\FormatterSection.cs">
+      <Link>FormatterSection.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\SettingsSection.cs">
+      <Link>SettingsSection.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\SettingsSectionView.xaml.cs">
+      <Link>SettingsSectionView.xaml.cs</Link>
+      <DependentUpon>SettingsSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\TeamExplorerBase\TeamExplorerBase.cs">
+      <Link>TeamExplorerBase\TeamExplorerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\TeamExplorerBase\TeamExplorerBaseNavigationItem.cs">
+      <Link>TeamExplorerBase\TeamExplorerBaseNavigationItem.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\TeamExplorerBase\TeamExplorerBaseNavigationLink.cs">
+      <Link>TeamExplorerBase\TeamExplorerBaseNavigationLink.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\TeamExplorerBase\TeamExplorerBasePage.cs">
+      <Link>TeamExplorerBase\TeamExplorerBasePage.cs</Link>
+    </Compile>
+    <Compile Include="..\CommitFormatter.TeamFoundation.14.0\TeamExplorerBase\TeamExplorerBaseSection.cs">
+      <Link>TeamExplorerBase\TeamExplorerBaseSection.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommitFormatter.Core\CommitFormatter.Core.csproj">
+      <Project>{f381663e-9afe-499a-8c16-770ab9c33977}</Project>
+      <Name>CommitFormatter.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\CommitFormatter.TeamFoundation.14.0\SettingsSectionView.xaml">
+      <Link>SettingsSectionView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

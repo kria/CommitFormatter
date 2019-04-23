@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommitFormatter", "CommitFormatter\CommitFormatter.csproj", "{1484406E-214F-4271-A3A9-3416E40F3E32}"
 EndProject
@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommitFormatter.TeamFoundation.16.0", "CommitFormatter.TeamFoundation.16.0\CommitFormatter.TeamFoundation.16.0.csproj", "{EE6B9DC5-35DC-46B7-A690-211C061B8027}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,8 +46,15 @@ Global
 		{DC93D32A-FEF5-4A1B-AAD4-B81B9BEBC4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC93D32A-FEF5-4A1B-AAD4-B81B9BEBC4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC93D32A-FEF5-4A1B-AAD4-B81B9BEBC4CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6B9DC5-35DC-46B7-A690-211C061B8027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6B9DC5-35DC-46B7-A690-211C061B8027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6B9DC5-35DC-46B7-A690-211C061B8027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6B9DC5-35DC-46B7-A690-211C061B8027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66771BF0-D041-4FDB-A362-7A3F4BBF9099}
 	EndGlobalSection
 EndGlobal
